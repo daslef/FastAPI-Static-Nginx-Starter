@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  proxy:
+    image: nginx:1.21.1-alpine
+    ports:
+      - 81:80
+    volumes:
+      - ./www/html:/var/www/html
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./static:/var/static
+    restart: always
+    depends_on:
+      - api
+    healthcheck:
+      test: ["CMD-SHELL", "wget -O /dev/null http://localhost || exit 1"]
+      interval: 60s
+      timeout: 10s
+
+  api:
+    image: fastapi-demo
+    ports:
+      - 8000:8000
+    restart: always
+    build: ./api

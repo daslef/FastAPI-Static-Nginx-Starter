@@ -10,7 +10,7 @@ This minimal example demonstrates how to use NGINX and FastAPI to serve static f
 
 ### Nginx Configuration
 
-* The NGINX configuration files are located in the `nginx/conf.d` folder.
+The NGINX configuration files are located in the `nginx/conf.d` folder.
 
 ```
 ./www/html:/var/www/html

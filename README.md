@@ -15,7 +15,7 @@ The NGINX configuration files are located in the `nginx/conf.d` folder.
 ```
 ./www/html:/var/www/html
 ./nginx/conf.d:/etc/nginx/conf.d
-./static:/var/static
+./static:/var/www/html/static
 ```
 
 ### API Configuration
